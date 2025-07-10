@@ -4,11 +4,12 @@ import datetime
 import numpy as np
 
 if __name__ == '__main__':
-    result_dir = "/home/disk/disk01/wzm/EQNet/docs/results/pyocto"
+    result_dir = "results/pyocto"
     result_path = lambda x: os.path.join(result_dir, x)
     phaseSA_select = result_dir + "/phaseSA_select.txt"
     phaseSA_best_select = result_dir + "/phaseSA_best_select.txt"
-
+    os.remove(phaseSA_select)
+    os.remove(phaseSA_best_select)
     channle = []
     num = 0
     # pyocto_events = pd.read_csv(result_path("associate_cat.csv"), parse_dates=["time"])
