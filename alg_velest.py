@@ -64,7 +64,7 @@ if __name__ == '__main__':
     mode = 1
 
     station = result_path("station.dat")  # station direcotry
-    vel = "LOC-FLOW/REAL/tt_db/mymodel.nd"  # velocity model directory
+    vel = "./REAL/tt_db/mymodel.nd"  # velocity model directory
     phasein_best = result_path("phaseSA_best_select.txt")  # use the SA locations (for mode = 0 only)
     phasein = result_path("phaseSA_select.txt")  # use the relocated SA locations
 
