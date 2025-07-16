@@ -4,7 +4,7 @@ import datetime
 import numpy as np
 
 if __name__ == '__main__':
-    result_dir = "results/pyocto"
+    result_dir = "/home/disk/disk01/backup/model/EQNet/docs/results/pyocto/"
     result_path = lambda x: os.path.join(result_dir, x)
     phaseSA_select = result_dir + "/phaseSA_select.txt"
     phaseSA_best_select = result_dir + "/phaseSA_best_select.txt"
@@ -61,7 +61,7 @@ if __name__ == '__main__':
     lat = 30
     lon = 121.7
     distmax = 100
-    mode = 1
+    mode = 0
 
     station = result_path("station.dat")  # station direcotry
     vel = "./REAL/tt_db/mymodel.nd"  # velocity model directory
