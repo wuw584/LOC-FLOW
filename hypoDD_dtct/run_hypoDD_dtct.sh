@@ -1,7 +1,7 @@
 #!/bin/bash -w
 ((!$#)) && echo bash $0 0,1,2,3 && exit 1
 phaseout=hypoDD.pha; #phase format for hypoDD
-stationin=../Data/station.dat; #station list
+stationin=/media/wzm/HLPBook/DiTingProject/results/synthesis_data/velest/station.dat; #station list
 stationout=station.dat; #station format by hypoDD
 
 awk '{print($4,$2,$1)}' $stationin > $stationout
@@ -22,8 +22,8 @@ then
 elif (($hypo == 1))
 then
         rms_threshold=0.5 # in sec, events with rms larger than this will not be used
-        gap_threshold=300 # in deg., events with station gap larger than this will not be used
-        maxdep=20 # in km, events with larger depth will not be used (< dep in the timetable)
+        gap_threshold=600 # in deg., events with station gap larger than this will not be used
+        maxdep=30 # in km, events with larger depth will not be used (< dep in the timetable)
         phasein=../location/VELEST/final.CNV
         python velest2hypoDD.py $phasein $phaseout $rms_threshold $gap_threshold $maxdep
         echo python velest2hypoDD.py $phasein $phaseout $rms_threshold $gap_threshold $maxdep

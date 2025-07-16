@@ -4,17 +4,32 @@
 ((!$#)) && echo bash $0 0,1 && exit 1
 ######################## step 1 (cookbook 3.2, 3a) ##################
 # change parameters as needed
-lat=42.75 # reference latitude
-lon=13.25 # reference longitude 
-distmax=120 # largest distance (stations with larger distance will be neglected) 
+lat=23 # reference latitude
+lon=114 # reference longitude 
+distmax=100 # largest distance (stations with larger distance will be neglected) 
 mode=$1 # 1: update locations alone (fast, usually good enough for your study) 
            # 0: first udpate locations and velocitiy using high-quanlity events and picks
            #    second relocate all events (slow, only for specific analysis), 
 
-station=../../Data/station.dat # station direcotry
-vel=../../REAL/tt_db/mymodel.nd # velocity model directory
-phasein_best=../../REAL/phase_best_allday.txt # use the SA locations (for mode = 0 only)
-phasein=../../REAL/phase_allday.txt # use the relocated SA locations
+# station=../../REAL_t3/station0.dat # station direcotry
+# vel=../../REAL_t3/tt_db/mymodel.nd # velocity model directory
+# phasein_best=../../REAL_t3/phase_best_sel.txt # use the SA locations (for mode = 0 only)
+# phasein=../../REAL_t3/phaseSA_select3.txt # use the relocated SA locations
+
+# station=/media/wzm/HLPBook/DiTingProject/results/xfj23km/location/velest/station.dat # station direcotry
+# vel=/media/wzm/HLPBook/DiTingProject/results/xfj23km/location/velest/mymodel.nd # velocity model directory
+# phasein_best=/media/wzm/HLPBook/DiTingProject/results/xfj23km/location/velest/phaseSA_best_select.txt # use the SA locations (for mode = 0 only)
+# phasein=/media/wzm/HLPBook/DiTingProject/results/xfj23km/location/velest/phaseSA_select.txt  # use the relocated SA locations
+
+# station=../../REAL_t3/station0.dat # station direcotry
+# vel=../../REAL_t3/tt_db/mymodel.nd # velocity model directory
+# phasein_best=../../REAL_t3/phase_best_sel.txt # use the SA locations (for mode = 0 only)
+# phasein=../../REAL_t3/phaseSA_select3.txt # use the relocated SA locations
+
+station=/media/wzm/HLPBook/DiTingProject/results/synthesis_data/velest/station.dat # station direcotry
+vel=/media/wzm/HLPBook/DiTingProject/results/xfj23km/location/velest/mymodel.nd # velocity model directory
+phasein_best=/media/wzm/HLPBook/DiTingProject/results/synthesis_data/velest/phaseSA_best_select.txt # use the SA locations (for mode = 0 only)
+phasein=/media/wzm/HLPBook/DiTingProject/results/synthesis_data/velest/phaseSA_select.txt  # use the relocated SA locations
 
 ####################### step 2 (cookbook 3.2, 3b)#####################
 # run velest with different options
@@ -48,8 +63,8 @@ fi
 
 ####################### step 3 (cookbook 3.2, 3c)###################
 # result format conversion and reselection
-stationgap=300 # events with station gap larger than this will be discarded
-resmax=0.5 # events with travel time residual larger than this will be discarded
+stationgap=520 # events with station gap larger than this will be discarded
+resmax=2 # events with travel time residual larger than this will be discarded
 relocatalog=new.cat # kept relocations
 deletedcatalog=dele.cat # discarded relocations
 # convert output location format

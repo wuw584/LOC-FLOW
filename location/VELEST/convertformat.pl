@@ -179,7 +179,7 @@ print JK "$isingle      0\n";
 #*** dmax    itopo    zmin     veladj    zadj   lowveloclay
 print JK "$distmax   0      $zmin    0.20    5.00    $lowvelocity\n";
 #*** nsp    swtfac   vpvs       nmod
-print JK "2      0.75      1.730        1\n";
+print JK "2      0.75      1.750        1\n";
 #***   othet   xythet    zthet    vthet   stathet
 print JK "0.01    0.01      0.01    $vthet     $stathet\n";
 #*** nsinv   nshcor   nshfix     iuseelev    iusestacorr
